@@ -17,6 +17,7 @@ SimpleBufferStream.prototype._dump = function() {
   this._state = 'done'
   this.emit('data', this._buffer)
   this.emit('end')
+  this.emit('close')
 }
 
 SimpleBufferStream.prototype.pause = function() {
@@ -29,6 +30,8 @@ SimpleBufferStream.prototype.resume = function() {
   this._state = 'ready'
   this._dump()
 }
+
+SimpleBufferStream.prototype.destroy = function() {}
 
 module.exports = function (buffer) {
   return new SimpleBufferStream(buffer)
