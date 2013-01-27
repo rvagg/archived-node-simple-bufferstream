@@ -1,0 +1,27 @@
+{
+    "name"            : "simple-bufferstream"
+  , "description"     : "Turn a Buffer into a Stream (simplistic version)"
+  , "version"         : "0.0.0"
+  , "homepage"        : "https://github.com/rvagg/node-simple-bufferstream"
+  , "authors"         : [
+        "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
+    ]
+  , "keywords"        : [ "buffer", "stream", "bufferstream" ]
+  , "main"            : "./index.js"
+  , "repository"      : {
+        "type"            : "git"
+      , "url"             : "https://github.com/rvagg/node-simple-bufferstream.git"
+    }
+  , "dependencies" : {
+    }
+  , "devDependencies" : {
+        "tape"            : "*"
+      , "concat-stream"   : "*"
+      , "boganipsum"      : "*"
+      , "rimraf"          : "*"
+    }
+  , "scripts": {
+        "test"            : "node ./test.js"
+    }
+  , "license"             : "MIT"
+}
