@@ -16,7 +16,7 @@
     }
   , "devDependencies" : {
         "tape"            : "*"
-      , "concat-stream"   : "*"
+      , "concat-stream"   : "~1.0.0"
       , "boganipsum"      : "*"
       , "rimraf"          : "*"
     }
