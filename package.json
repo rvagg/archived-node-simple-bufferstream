@@ -1,7 +1,7 @@
 {
     "name"            : "simple-bufferstream"
   , "description"     : "Turn a Buffer into a Stream (simplistic version)"
-  , "version"         : "0.0.2"
+  , "version"         : "0.0.3"
   , "homepage"        : "https://github.com/rvagg/node-simple-bufferstream"
   , "authors"         : [
         "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)"
