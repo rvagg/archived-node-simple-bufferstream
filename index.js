@@ -2,10 +2,13 @@ const stream = require('stream')
     , util   = require('util')
 
 var SimpleBufferStream = function (buffer) {
-  stream.Stream.call(this)
-  this._state  = 'ready'
-  this._buffer = buffer
-  process.nextTick(this._dump.bind(this))
+  var self = this
+  stream.Stream.call(self)
+  self._state  = 'ready'
+  self._buffer = buffer
+  process.nextTick(function () {
+    self._dump()
+  })
 }
 
 util.inherits(SimpleBufferStream, stream.Stream)
