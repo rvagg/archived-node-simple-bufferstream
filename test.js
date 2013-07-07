@@ -6,16 +6,13 @@ var tape   = require('tape')
   , sbuff  = require('./')
 
 tape('test simple concat', function (t) {
-  t.plan(2)
+  t.plan(1)
 
   var inp = new Buffer(bogan())
 
   sbuff(inp).pipe(
-    concat(function (err, body) {
-      t.notOk(err, 'no error')
-
+    concat(function (body) {
       t.equals(body.toString(), inp.toString(), 'output = input')
-      t.end()
     })
   )
 })
@@ -48,8 +45,7 @@ tape('test pause & resume', function (t) {
     , ccstream
 
   stream.pipe(
-    ccstream = concat(function (err, body) {
-      t.notOk(err, 'no error')
+    ccstream = concat(function (body) {
       t.equals(body.toString(), inp.toString(), 'output = input')
       t.end()
     })
