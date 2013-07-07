@@ -1,6 +1,6 @@
 var tape   = require('tape')
   , fs     = require('fs')
-  , concat = require('concat-stream')
+  , bl     = require('bl')
   , bogan  = require('boganipsum')
   , rimraf = require('rimraf')
   , sbuff  = require('./')
@@ -11,7 +11,7 @@ tape('test simple concat', function (t) {
   var inp = new Buffer(bogan())
 
   sbuff(inp).pipe(
-    concat(function (err, body) {
+    bl(function (err, body) {
       t.notOk(err, 'no error')
 
       t.equals(body.toString(), inp.toString(), 'output = input')
@@ -45,10 +45,10 @@ tape('test pause & resume', function (t) {
 
   var inp    = new Buffer(bogan())
     , stream = sbuff(inp)
-    , ccstream
+    , blstream
 
   stream.pipe(
-    ccstream = concat(function (err, body) {
+    blstream = bl(function (err, body) {
       t.notOk(err, 'no error')
       t.equals(body.toString(), inp.toString(), 'output = input')
       t.end()
@@ -58,7 +58,7 @@ tape('test pause & resume', function (t) {
   stream.pause()
 
   setTimeout(function () {
-    t.equal(ccstream.body.length, 0, 'nothing in concat-stream, stream is paused')
+    t.equal(blstream.length, 0, 'nothing in concat-stream, stream is paused')
     stream.resume()
   }, 100)
 })
