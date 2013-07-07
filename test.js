@@ -6,8 +6,6 @@ var tape   = require('tape')
   , sbuff  = require('./')
 
 tape('test simple concat', function (t) {
-  t.plan(2)
-
   var inp = new Buffer(bogan())
 
   sbuff(inp).pipe(
@@ -21,8 +19,6 @@ tape('test simple concat', function (t) {
 })
 
 tape('test against fs write-stream', function (t) {
-  t.plan(1)
-
   var inp = new Buffer(bogan())
     , f   = '$$.test.$$'
 
@@ -41,8 +37,6 @@ tape('test against fs write-stream', function (t) {
 
 
 tape('test pause & resume', function (t) {
-  t.plan(3)
-
   var inp    = new Buffer(bogan())
     , stream = sbuff(inp)
     , blstream
