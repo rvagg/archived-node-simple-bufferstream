@@ -16,4 +16,4 @@ Not that you'd want to do exactly that but sometimes you need a Buffer to behave
 
 ## Licence
 
-Simple BufferStream is Copyright (c) 2012 Rod Vagg [@rvagg](https://twitter.com/rvagg) and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.
+Simple BufferStream is Copyright (c) 2012-2015 Rod Vagg [@rvagg](https://twitter.com/rvagg) and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
